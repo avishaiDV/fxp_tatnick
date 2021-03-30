@@ -1,6 +1,6 @@
 body {
   background-color: #eee;
-  color: white;
+  color: black;
   font-family: "open sans hebrew";
 }
 .user {
@@ -61,4 +61,18 @@ body {
   border: none;
   box-shadow: 0px 0px 5px rgb(187, 187, 187);
   border-radius: 5px;
+}
+
+.options {
+  color: black;
+}
+
+.options input {
+  border-radius: 10px;
+}
+
+.colorChoose {
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
