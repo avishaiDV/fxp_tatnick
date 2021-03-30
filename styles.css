@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+@import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
+
 body {
   background-color: #eee;
   color: black;
@@ -63,16 +66,24 @@ body {
   border-radius: 5px;
 }
 
-.options {
-  color: black;
-}
-
-.options input {
-  border-radius: 10px;
-}
-
 .colorChoose {
   align-items: center;
   justify-content: center;
   display: flex;
+}
+
+.addBg {
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 10px;
+}
+
+.cb {
+  padding: 3px;
+  margin: 5px;
+  margin: 5px;
+  box-shadow: 0px 0px 5px rgb(187, 187, 187);
+  border-radius: 20px;
 }

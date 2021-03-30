@@ -30,10 +30,30 @@
       <input type="text" id="textListen" placeholder="הכנס טקסט לתת ניק" />
     </div>
     <div class="colorChoose">
-      <input type="color" id="pick" value="#e66465" />
-      <label for="head">Choose a color</label>
+      <span>
+        <input type="color" id="pick" value="#0099ff" />
+        <label for="head">:בחר צבע</label>
+      </span>
+      <span>
+        <input type="color" id="pickBbC" value="#0099ff" />
+        <label for="head">:בחר צבע רקע</label>
+      </span>
     </div>
-
+    <div class="addBg">
+      <span class="cb">
+        <input type="checkbox" id="shadowCheck" />
+        <label>הוסף צל</label>
+      </span>
+      <span class="cb">
+        <input type="checkbox" id="bgCheck" />
+        <label>הוסף רקע</label>
+      </span>
+      <span class="cb">
+        <input type="checkbox" id="roundedCheck" />
+        <label>פינות מעוגלות (רקע)</label>
+      </span>
+    </div>
+    <script src="./functions.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

@@ -7,6 +7,12 @@ let tatNickText = document.querySelector(
   "body > div.user > div.tatnick > spasn"
 );
 const colorPick = document.querySelector("#pick");
+const BgcolorPick = document.querySelector("#pickBbC");
+const addShadow = document.querySelector("#shadowCheck");
+const addBg = document.querySelector("#bgCheck");
+const roundedCheck = document.querySelector("#roundedCheck");
+
+let bgColor;
 result.innerHTML = tatnick.innerHTML;
 
 // checks if input has a username and handle with the info
@@ -33,39 +39,43 @@ colorPick.addEventListener("change", function () {
   update();
 });
 
-checkbox.forEach((ch) => {
-  ch.addEventListener("change", function (e) {
-    if (ch.checked) {
-      tatNickText.style.color = "black";
-      update();
-    } else {
-      tatNickText.style.color = "";
-      update();
-    }
-  });
+// listen to cahnge bg color
+pickBbC.addEventListener("change", () => {
+  bgColor = pickBbC.value;
+  update();
+  for (let i = 0; i < 2; i++) {
+    addBg.click();
+  }
+});
+// listen to add bg
+addBg.addEventListener("change", () => {
+  if (addBg.checked == true) {
+    tatNickText.style.backgroundColor = pickBbC.value;
+    update();
+  } else {
+    tatNickText.style.backgroundColor = "";
+    update();
+  }
 });
 
-// functiones
-function update() {
-  result.innerHTML = tatnick.innerHTML;
-}
+// listen to add shadow
+addShadow.addEventListener("change", () => {
+  if (addShadow.checked == true) {
+    tatNickText.style.textShadow = "0px 0px 5px rgb(140, 140, 140)";
+    update();
+  } else {
+    tatNickText.style.textShadow = "";
+    update();
+  }
+});
 
-function resetTatnick() {
-  tatNickText.innerText = "משתמש כבוד";
-  update();
-}
-
-function loadUser() {
-  fetch(`https://fxptest.000webhostapp.com/who/user.php?user=${username}`)
-    .then((res) => res.json())
-    .then(function (res) {
-      console.log(res);
-      const username = res[0].usernamenormal;
-      console.log(username);
-      const img = "https://i.imagesup.co" + res[0].profilepic;
-      document.querySelector(
-        ".image"
-      ).innerHTML = `<img class="image" src=${img} alt="default" />`;
-      document.querySelector(".username").innerText = username;
-    });
-}
+// listen to rounded check
+roundedCheck.addEventListener("change", () => {
+  if (roundedCheck.checked == true) {
+    tatNickText.style.borderRadius = "20px";
+    update();
+  } else {
+    tatNickText.style.borderRadius = "";
+    update();
+  }
+});
