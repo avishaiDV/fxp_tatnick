@@ -13,6 +13,10 @@ const addBg = document.querySelector("#bgCheck");
 const roundedCheck = document.querySelector("#roundedCheck");
 const pickBgColor = document.querySelector("#pickBgColor");
 const checkRoundedCorners = document.querySelector("#checkRoundedCorners");
+const sizeSlider = document.querySelector("#textSizeSlider");
+const guyStyleCheck = document.querySelector("#guyStyleCheck");
+
+// set the text area (result) for the first time.
 result.innerHTML = tatnick.innerHTML;
 
 // checks if input has a username and handle with the info
@@ -82,6 +86,23 @@ roundedCheck.addEventListener("change", () => {
     update();
   } else {
     tatNickText.style.borderRadius = "";
+    update();
+  }
+});
+
+// listens to size slider
+sizeSlider.addEventListener("change", () => {
+  tatNickText.style.fontSize = sizeSlider.value + "px";
+  update();
+});
+
+// listen to guystyle checkbox
+guyStyleCheck.addEventListener("change", () => {
+  if (guyStyleCheck.checked) {
+    tatNickText.classList += "guystyle";
+    update();
+  } else {
+    tatNickText.classList = "";
     update();
   }
 });

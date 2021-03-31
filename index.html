@@ -35,7 +35,7 @@
         <label for="head">:בחר צבע</label>
       </span>
       <span id="pickBgColor" hidden>
-        <input type="color" id="pickBbC" value="#0099ff" />
+        <input type="color" id="pickBbC" value="#ff8600" />
         <label for="head">:בחר צבע רקע</label>
       </span>
     </div>
@@ -51,6 +51,27 @@
       <span class="cb" id="checkRoundedCorners" hidden>
         <input type="checkbox" id="roundedCheck" />
         <label>פינות מעוגלות</label>
+      </span>
+    </div>
+    <div class="size">
+      <br />
+      <input
+        type="range"
+        min="5"
+        max="35"
+        value="13"
+        id="textSizeSlider"
+        class="slider"
+      />
+      <lable>:גודל טקסט</lable>
+    </div>
+    <div class="specialEffects">
+      <span>:אפקטים מיוחדים</span>
+    </div>
+    <div class="specialEffects">
+      <span class="cb">
+        <input type="checkbox" id="guyStyleCheck" />
+        <label>(אנגלית בלבד) גיא סטייל</label>
       </span>
     </div>
     <script src="./functions.js"></script>

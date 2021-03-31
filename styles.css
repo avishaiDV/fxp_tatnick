@@ -1,11 +1,12 @@
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
-
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
 body {
   background-color: #eee;
   color: black;
   font-family: "open sans hebrew";
 }
+
 .user {
   margin: auto;
   width: 250px;
@@ -86,4 +87,53 @@ body {
   margin: 5px;
   box-shadow: 0px 0px 5px rgb(187, 187, 187);
   border-radius: 20px;
+}
+
+.size {
+  justify-content: center;
+  display: flex;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 25%;
+  height: 15px;
+  border-radius: 20px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ff8600;
+  box-shadow: 0px 0px 5px rgb(146, 146, 146);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+.guystyle {
+  font-weight: bold;
+  color: #015b4a;
+  font-family: "Rancho", cursive;
+  font-size: 28px;
+  text-shadow: 0.04em 0.04em 0 #fff, 0.08em 0.08em 0 #aaa;
+  -webkit-text-shadow: 0.04em 0.04em 0 #fff, 0.08em 0.08em 0 #aaa;
+}
+
+.specialEffects {
+  justify-content: center;
+  display: flex;
 }
