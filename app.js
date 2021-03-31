@@ -1,9 +1,9 @@
 let username = prompt("What is your nick?");
-let result = document.querySelector(".tatRes");
-let tatnick = document.querySelector(".tatnick");
-let textListen = document.querySelector("#textListen");
-let tatRes = document.querySelector(".tatRes");
-let tatNickText = document.querySelector(
+const result = document.querySelector(".tatRes");
+const tatnick = document.querySelector(".tatnick");
+const textListen = document.querySelector("#textListen");
+const tatRes = document.querySelector(".tatRes");
+const tatNickText = document.querySelector(
   "body > div.user > div.tatnick > spasn"
 );
 const colorPick = document.querySelector("#pick");
@@ -11,8 +11,8 @@ const BgcolorPick = document.querySelector("#pickBbC");
 const addShadow = document.querySelector("#shadowCheck");
 const addBg = document.querySelector("#bgCheck");
 const roundedCheck = document.querySelector("#roundedCheck");
-
-let bgColor;
+const pickBgColor = document.querySelector("#pickBgColor");
+const checkRoundedCorners = document.querySelector("#checkRoundedCorners");
 result.innerHTML = tatnick.innerHTML;
 
 // checks if input has a username and handle with the info
@@ -39,21 +39,27 @@ colorPick.addEventListener("change", function () {
   update();
 });
 
-// listen to cahnge bg color
-pickBbC.addEventListener("change", () => {
-  bgColor = pickBbC.value;
-  update();
-  for (let i = 0; i < 2; i++) {
-    addBg.click();
-  }
-});
 // listen to add bg
 addBg.addEventListener("change", () => {
   if (addBg.checked == true) {
-    tatNickText.style.backgroundColor = pickBbC.value;
+    tatNickText.style.backgroundColor = BgcolorPick.value;
+    // listens to color changing
+    BgcolorPick.addEventListener("change", () => {
+      tatNickText.style.backgroundColor = BgcolorPick.value;
+      update();
+    });
+    pickBgColor.hidden = false;
+    checkRoundedCorners.hidden = false;
     update();
   } else {
     tatNickText.style.backgroundColor = "";
+    pickBgColor.hidden = true;
+    checkRoundedCorners.hidden = true;
+    update();
+  }
+  if (checkRoundedCorners.hidden == true) {
+    roundedCheck.checked = false;
+    tatNickText.style.borderRadius = "";
     update();
   }
 });
@@ -61,7 +67,7 @@ addBg.addEventListener("change", () => {
 // listen to add shadow
 addShadow.addEventListener("change", () => {
   if (addShadow.checked == true) {
-    tatNickText.style.textShadow = "0px 0px 5px rgb(140, 140, 140)";
+    tatNickText.style.textShadow = "0px 0px 5px #8c8c8c";
     update();
   } else {
     tatNickText.style.textShadow = "";
