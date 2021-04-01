@@ -8,6 +8,8 @@ const tatNickText = document.querySelector(
 );
 const colorPick = document.querySelector("#pick");
 const BgcolorPick = document.querySelector("#pickBbC");
+const shadowColorHide = document.querySelector("#pickShadpwColor");
+const shadowColorPick = document.querySelector("#pickShadowC");
 const addShadow = document.querySelector("#shadowCheck");
 const addBg = document.querySelector("#bgCheck");
 const roundedCheck = document.querySelector("#roundedCheck");
@@ -77,9 +79,16 @@ addBg.addEventListener("change", () => {
 // listen to add shadow
 addShadow.addEventListener("change", () => {
   if (addShadow.checked == true) {
-    tatNickText.style.textShadow = "0px 0px 5px #8c8c8c";
+    // listens to color changing
+    shadowColorPick.addEventListener("change", () => {
+      tatNickText.style.textShadow = "0px 0px 5px" + shadowColorPick.value;
+      update();
+    });
+    shadowColorHide.hidden = false;
+    tatNickText.style.textShadow = "0px 0px 5px" + shadowColorPick.value;
     update();
   } else {
+    shadowColorHide.hidden = true;
     tatNickText.style.textShadow = "";
     update();
   }
@@ -130,8 +139,8 @@ abirStyleCheck.addEventListener("change", () => {
   }
 });
 
+// reset to default settings
 reset.addEventListener("click", () => {
-  console.log("reset");
   document.querySelectorAll("input").forEach((ch) => {
     if (ch.checked) {
       ch.click();
@@ -139,4 +148,10 @@ reset.addEventListener("click", () => {
   });
   textListen.value = "";
   resetTatnick();
+  sizeSlider.value = 13;
+  tatNickText.style.fontSize = "";
+  tatNickText.style.color = "";
+  colorPick.value = "#0099ff";
+  shadowColorPick.value = "#8c8c8c";
+  update();
 });
