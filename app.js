@@ -15,11 +15,17 @@ const pickBgColor = document.querySelector("#pickBgColor");
 const checkRoundedCorners = document.querySelector("#checkRoundedCorners");
 const sizeSlider = document.querySelector("#textSizeSlider");
 const guyStyleCheck = document.querySelector("#guyStyleCheck");
+const abirStyleCheck = document.querySelector("#abirStyleCheck");
+const reset = document.querySelector("#reset");
 
 // set the text area (result) for the first time.
 result.innerHTML = tatnick.innerHTML;
 
 // checks if input has a username and handle with the info
+
+// document.addEventListener("change", () => {
+//   update();
+// });
 
 if (username) {
   loadUser();
@@ -99,10 +105,38 @@ sizeSlider.addEventListener("change", () => {
 // listen to guystyle checkbox
 guyStyleCheck.addEventListener("change", () => {
   if (guyStyleCheck.checked) {
-    tatNickText.classList += "guystyle";
+    tatNickText.classList = "guystyle";
     update();
   } else {
     tatNickText.classList = "";
     update();
   }
+  if (abirStyleCheck.checked) {
+    abirStyleCheck.checked = false;
+  }
+});
+
+// listen to abir style checkbox
+abirStyleCheck.addEventListener("change", () => {
+  if (abirStyleCheck.checked) {
+    tatNickText.classList = "abir";
+    update();
+  } else {
+    tatNickText.classList = "";
+    update();
+  }
+  if (guyStyleCheck.checked) {
+    guyStyleCheck.checked = false;
+  }
+});
+
+reset.addEventListener("click", () => {
+  console.log("reset");
+  document.querySelectorAll("input").forEach((ch) => {
+    if (ch.checked) {
+      ch.click();
+    }
+  });
+  textListen.value = "";
+  resetTatnick();
 });

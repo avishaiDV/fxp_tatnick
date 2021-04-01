@@ -124,6 +124,11 @@ body {
   cursor: pointer;
 }
 
+.specialEffects {
+  justify-content: center;
+  display: flex;
+}
+
 .guystyle {
   font-weight: bold;
   color: #015b4a;
@@ -133,7 +138,37 @@ body {
   -webkit-text-shadow: 0.04em 0.04em 0 #fff, 0.08em 0.08em 0 #aaa;
 }
 
-.specialEffects {
-  justify-content: center;
+.abir {
+  font-weight: bold;
+  font-family: open sans hebrew;
+  font-size: 12pt;
+  animation-name: color_change;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes color_change {
+  from {
+    color: blue;
+  }
+
+  to {
+    color: red;
+  }
+}
+
+.reset {
   display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.reset button {
+  outline: none;
+  border: none;
+  background-color: rgb(214, 214, 214);
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px rgb(141, 141, 141);
+  padding: 5px;
 }
