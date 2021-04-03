@@ -1,4 +1,4 @@
-let username = prompt("What is your nick?");
+let username;
 const result = document.querySelector(".tatRes");
 const tatnick = document.querySelector(".tatnick");
 const textListen = document.querySelector("#textListen");
@@ -19,20 +19,21 @@ const sizeSlider = document.querySelector("#textSizeSlider");
 const guyStyleCheck = document.querySelector("#guyStyleCheck");
 const abirStyleCheck = document.querySelector("#abirStyleCheck");
 const reset = document.querySelector("#reset");
+const disconnect = document.querySelector("#disconnect");
 
 // set the text area (result) for the first time.
 result.innerHTML = tatnick.innerHTML;
 
 // checks if input has a username and handle with the info
 
-// document.addEventListener("change", () => {
-//   update();
-// });
-
-if (username) {
-  loadUser();
+if (getCookie("username") == "") {
+  username = prompt("what is your username?");
+  if (username) {
+    createCookie("username", username);
+    loadUser();
+  }
 } else {
-  alert("user input is empty, you will use default user now.");
+  loadUser();
 }
 
 // listen to edit text
@@ -155,3 +156,23 @@ reset.addEventListener("click", () => {
   shadowColorPick.value = "#8c8c8c";
   update();
 });
+
+if (!getCookie("username")) {
+  disconnect.innerText = "להתחבר למשתמש";
+  disconnect.onclick = function () {
+    username = prompt("what is your username?");
+    if (username) {
+      createCookie("username", username);
+      window.location.reload();
+    }
+  };
+} else {
+  disconnect.innerText = "להתנתק מהמשתמש";
+  disconnect.onclick = function () {
+    eraseCookie("username", "", -1);
+    window.location.reload();
+  };
+}
+// disconnect.addEventListener("click", () => {
+//   eraseCookie("username", "", -1);
+// });
