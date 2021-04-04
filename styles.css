@@ -200,3 +200,18 @@ body {
   background-color: #ff8600;
   font-weight: bold;
 }
+
+footer {
+  justify-content: center;
+  display: flex;
+  margin: 2%;
+}
+
+footer a {
+  color: #ff8600;
+}
+
+footer a:hover {
+  color: #069;
+  font-weight: bold;
+}

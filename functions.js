@@ -76,5 +76,7 @@ function reSet() {
   colorPick.value = "#0099ff";
   shadowColorPick.value = "#8c8c8c";
   tatNickText.style.fontFamily = "";
+  gc1.value = "#ff5500";
+  gc2.value = "#ffe600";
   update();
 }

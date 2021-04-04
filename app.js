@@ -21,6 +21,10 @@ const abirStyleCheck = document.querySelector("#abirStyleCheck");
 const reset = document.querySelector("#reset");
 const disconnect = document.querySelector("#disconnect");
 const font = document.querySelector("#fonts");
+const grediant = document.querySelector("#gradientCheck");
+const grediantColorHidden = document.querySelector(".grediantColorHidden");
+const gc1 = document.querySelector("#gc1");
+const gc2 = document.querySelector("#gc2");
 
 // set the text area (result) for the first time.
 result.innerHTML = tatnick.innerHTML;
@@ -122,8 +126,16 @@ guyStyleCheck.addEventListener("change", () => {
     tatNickText.classList = "";
     update();
   }
-  if (abirStyleCheck.checked) {
+  if (abirStyleCheck.checked || grediant.checked) {
     abirStyleCheck.checked = false;
+    grediant.checked = false;
+    document.querySelector(
+      "body > div.addBg > span:nth-child(2)"
+    ).hidden = false;
+    grediantColorHidden.hidden = true;
+    document.querySelector(
+      "body > div.colorChoose > span:nth-child(1)"
+    ).hidden = false;
   }
 });
 
@@ -136,9 +148,64 @@ abirStyleCheck.addEventListener("change", () => {
     tatNickText.classList = "";
     update();
   }
-  if (guyStyleCheck.checked) {
+  if (guyStyleCheck.checked || grediant.checked) {
     guyStyleCheck.checked = false;
+    grediant.checked = false;
+    document.querySelector(
+      "body > div.addBg > span:nth-child(2)"
+    ).hidden = false;
+    grediantColorHidden.hidden = true;
+    document.querySelector(
+      "body > div.colorChoose > span:nth-child(1)"
+    ).hidden = false;
   }
+});
+
+// gradient listener
+grediant.addEventListener("change", () => {
+  if (grediant.checked) {
+    tatNickText.style.backgroundImage = `linear-gradient(180deg, ${gc1.value}, ${gc2.value})`;
+    tatNickText.style.webkitBackgroundClip = "text";
+    tatNickText.style.webkitTextFillColor = "transparent";
+    document.querySelector(
+      "body > div.addBg > span:nth-child(2)"
+    ).hidden = true;
+    grediantColorHidden.hidden = false;
+    document.querySelector(
+      "body > div.colorChoose > span:nth-child(1)"
+    ).hidden = true;
+
+    update();
+  } else {
+    tatNickText.style.backgroundImage = "";
+    tatNickText.style.webkitBackgroundClip = "";
+    tatNickText.style.webkitTextFillColor = "";
+    document.querySelector(
+      "body > div.addBg > span:nth-child(2)"
+    ).hidden = false;
+    document.querySelector(
+      "body > div.colorChoose > span:nth-child(1)"
+    ).hidden = false;
+    grediantColorHidden.hidden = true;
+    update();
+  }
+  if (abirStyleCheck.checked || guyStyleCheck.checked) {
+    tatNickText.classList = "";
+    abirStyleCheck.checked = false;
+    guyStyleCheck.checked = false;
+    update();
+  }
+});
+
+// listens to color pick change (of gradients).
+gc1.addEventListener("change", () => {
+  tatNickText.style.backgroundImage = `linear-gradient(180deg, ${gc1.value}, ${gc2.value})`;
+  update();
+});
+
+gc2.addEventListener("change", () => {
+  tatNickText.style.backgroundImage = `linear-gradient(180deg, ${gc1.value}, ${gc2.value})`;
+  update();
 });
 
 // reset to default settings
@@ -146,6 +213,7 @@ reset.addEventListener("click", () => {
   reSet();
 });
 
+// disconnect/connect button
 if (!getCookie("username")) {
   disconnect.innerText = "להתחבר למשתמש";
   disconnect.onclick = function () {
@@ -163,6 +231,7 @@ if (!getCookie("username")) {
   };
 }
 
+//change font listener
 font.addEventListener("change", () => {
   tatNickText.style.fontFamily = font.value;
   update();

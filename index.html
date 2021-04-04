@@ -47,6 +47,17 @@
         <input type="color" id="pickShadowC" value="#8c8c8c" />
         <label for="head">:בחר צבע צל</label>
       </span>
+      <!-- gradient -->
+      <div class="grediantColorHidden" hidden>
+        <span>
+          <input type="color" id="gc1" value="#ff5500" />
+          <label for="head">:צבע גרדיאנט 1</label>
+        </span>
+        <span>
+          <input type="color" id="gc2" value="#ffe600" />
+          <label for="head">:צבע גרדיאנט 2</label>
+        </span>
+      </div>
     </div>
     <div class="fontChoose">
       <select name="fonts" id="fonts">
@@ -89,14 +100,26 @@
     <div class="specialEffects">
       <span class="cb">
         <input type="checkbox" id="guyStyleCheck" />
-        <label>(אנגלית בלבד) גיא סטייל</label>
+        <label>גיא סטייל</label>
       </span>
       <span class="cb">
         <input type="checkbox" id="abirStyleCheck" />
         <label>(מחליף צבעים) אביר</label>
       </span>
+      <span class="cb">
+        <input type="checkbox" id="gradientCheck" />
+        <label>גרדיאנט</label>
+      </span>
     </div>
 
+    <footer>
+      <span
+        >made by
+        <a href="https://www.fxp.co.il/member.php?u=1195305" target="_blank"
+          >avishaiUniverse</a
+        >.</span
+      >
+    </footer>
     <script src="./functions.js"></script>
     <script src="./app.js"></script>
   </body>
