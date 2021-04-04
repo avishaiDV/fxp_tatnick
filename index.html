@@ -8,110 +8,111 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="user">
-      <div class="nick">
-        <span class="username">username</span>
+    <div class="content">
+      <div class="user">
+        <div class="nick">
+          <span class="username">username</span>
+        </div>
+        <div class="tatnick">
+          <spasn>משתמש כבוד</spasn>
+        </div>
+        <div class="image">
+          <img
+            class="image"
+            src="https://static.fcdn.co.il/dyn/projects/privatemessage/icons/usericonprofile.svg"
+            alt="default"
+          />
+        </div>
       </div>
-      <div class="tatnick">
-        <spasn>משתמש כבוד</spasn>
+      <div class="result">
+        <textarea class="tatRes" disabled></textarea>
       </div>
-      <div class="image">
-        <img
-          class="image"
-          src="https://static.fcdn.co.il/dyn/projects/privatemessage/icons/usericonprofile.svg"
-          alt="default"
+      <div class="textIn">
+        <input type="text" id="textListen" placeholder="הכנס טקסט לתת ניק" />
+      </div>
+      <div class="reset">
+        <button id="disconnect">להתנתק מהמשתמש</button>
+
+        <button id="reset">לאפס הגדרות לברירת המחדל</button>
+      </div>
+      <div class="colorChoose">
+        <span>
+          <input type="color" id="pick" value="#0099ff" />
+          <label for="head">:בחר צבע</label>
+        </span>
+        <span id="pickBgColor" hidden>
+          <input type="color" id="pickBbC" value="#ff8600" />
+          <label for="head">:בחר צבע רקע</label>
+        </span>
+        <span id="pickShadpwColor" hidden>
+          <input type="color" id="pickShadowC" value="#8c8c8c" />
+          <label for="head">:בחר צבע צל</label>
+        </span>
+        <!-- gradient -->
+        <div class="grediantColorHidden" hidden>
+          <span>
+            <input type="color" id="gc1" value="#ff5500" />
+            <label for="head">:צבע גרדיאנט 1</label>
+          </span>
+          <span>
+            <input type="color" id="gc2" value="#ffe600" />
+            <label for="head">:צבע גרדיאנט 2</label>
+          </span>
+        </div>
+      </div>
+      <div class="fontChoose">
+        <select name="fonts" id="fonts">
+          <option value="Open Sans Hebrew">Open Sans Hebrew</option>
+          <option value="almoni-dl">Almoni</option>
+          <option value="Rancho">Rancho</option>
+          <option value="Arial">Arial</option>
+        </select>
+        <label for="fonts">:בחר פונט</label>
+      </div>
+      <div class="addBg">
+        <span class="cb">
+          <input type="checkbox" id="shadowCheck" />
+          <label>הוסף צל</label>
+        </span>
+        <span class="cb">
+          <input type="checkbox" id="bgCheck" />
+          <label>הוסף רקע</label>
+        </span>
+        <span class="cb" id="checkRoundedCorners" hidden>
+          <input type="checkbox" id="roundedCheck" />
+          <label>פינות מעוגלות</label>
+        </span>
+      </div>
+      <div class="size">
+        <br />
+        <input
+          type="range"
+          min="5"
+          max="35"
+          value="13"
+          id="textSizeSlider"
+          class="slider"
         />
+        <lable>:גודל טקסט</lable>
       </div>
-    </div>
-    <div class="result">
-      <textarea class="tatRes" disabled></textarea>
-    </div>
-    <div class="textIn">
-      <input type="text" id="textListen" placeholder="הכנס טקסט לתת ניק" />
-    </div>
-    <div class="reset">
-      <button id="disconnect">להתנתק מהמשתמש</button>
-
-      <button id="reset">לאפס הגדרות לברירת המחדל</button>
-    </div>
-    <div class="colorChoose">
-      <span>
-        <input type="color" id="pick" value="#0099ff" />
-        <label for="head">:בחר צבע</label>
-      </span>
-      <span id="pickBgColor" hidden>
-        <input type="color" id="pickBbC" value="#ff8600" />
-        <label for="head">:בחר צבע רקע</label>
-      </span>
-      <span id="pickShadpwColor" hidden>
-        <input type="color" id="pickShadowC" value="#8c8c8c" />
-        <label for="head">:בחר צבע צל</label>
-      </span>
-      <!-- gradient -->
-      <div class="grediantColorHidden" hidden>
-        <span>
-          <input type="color" id="gc1" value="#ff5500" />
-          <label for="head">:צבע גרדיאנט 1</label>
+      <div class="specialEffects">
+        <span>:אפקטים מיוחדים</span>
+      </div>
+      <div class="specialEffects">
+        <span class="cb">
+          <input type="checkbox" id="guyStyleCheck" />
+          <label>גיא סטייל</label>
         </span>
-        <span>
-          <input type="color" id="gc2" value="#ffe600" />
-          <label for="head">:צבע גרדיאנט 2</label>
+        <span class="cb">
+          <input type="checkbox" id="abirStyleCheck" />
+          <label>(מחליף צבעים) אביר</label>
+        </span>
+        <span class="cb">
+          <input type="checkbox" id="gradientCheck" />
+          <label>גרדיאנט</label>
         </span>
       </div>
     </div>
-    <div class="fontChoose">
-      <select name="fonts" id="fonts">
-        <option value="Open Sans Hebrew">Open Sans Hebrew</option>
-        <option value="almoni-dl">Almoni</option>
-        <option value="Rancho">Rancho</option>
-        <option value="Arial">Arial</option>
-      </select>
-      <label for="fonts">:בחר פונט</label>
-    </div>
-    <div class="addBg">
-      <span class="cb">
-        <input type="checkbox" id="shadowCheck" />
-        <label>הוסף צל</label>
-      </span>
-      <span class="cb">
-        <input type="checkbox" id="bgCheck" />
-        <label>הוסף רקע</label>
-      </span>
-      <span class="cb" id="checkRoundedCorners" hidden>
-        <input type="checkbox" id="roundedCheck" />
-        <label>פינות מעוגלות</label>
-      </span>
-    </div>
-    <div class="size">
-      <br />
-      <input
-        type="range"
-        min="5"
-        max="35"
-        value="13"
-        id="textSizeSlider"
-        class="slider"
-      />
-      <lable>:גודל טקסט</lable>
-    </div>
-    <div class="specialEffects">
-      <span>:אפקטים מיוחדים</span>
-    </div>
-    <div class="specialEffects">
-      <span class="cb">
-        <input type="checkbox" id="guyStyleCheck" />
-        <label>גיא סטייל</label>
-      </span>
-      <span class="cb">
-        <input type="checkbox" id="abirStyleCheck" />
-        <label>(מחליף צבעים) אביר</label>
-      </span>
-      <span class="cb">
-        <input type="checkbox" id="gradientCheck" />
-        <label>גרדיאנט</label>
-      </span>
-    </div>
-
     <footer>
       <span
         >made by

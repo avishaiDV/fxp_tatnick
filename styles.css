@@ -10,6 +10,12 @@ body {
   background-color: #eee;
   color: black;
   font-family: "open sans hebrew";
+  display: flex;
+  flex-direction: column;
+}
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 
 .user {
@@ -201,10 +207,14 @@ body {
   font-weight: bold;
 }
 
+.content {
+  min-height: calc(100vh - 70px);
+}
+
 footer {
+  height: 50px;
   justify-content: center;
   display: flex;
-  margin: 2%;
 }
 
 footer a {
