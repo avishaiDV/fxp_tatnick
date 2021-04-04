@@ -130,11 +130,11 @@ guyStyleCheck.addEventListener("change", () => {
     abirStyleCheck.checked = false;
     grediant.checked = false;
     document.querySelector(
-      "body > div.addBg > span:nth-child(2)"
+      "body > div > div.addBg > span:nth-child(2)"
     ).hidden = false;
     grediantColorHidden.hidden = true;
     document.querySelector(
-      "body > div.colorChoose > span:nth-child(1)"
+      "body > div > div.colorChoose > span:nth-child(1)"
     ).hidden = false;
   }
 });
@@ -152,11 +152,11 @@ abirStyleCheck.addEventListener("change", () => {
     guyStyleCheck.checked = false;
     grediant.checked = false;
     document.querySelector(
-      "body > div.addBg > span:nth-child(2)"
+      "body > div > div.addBg > span:nth-child(2)"
     ).hidden = false;
     grediantColorHidden.hidden = true;
     document.querySelector(
-      "body > div.colorChoose > span:nth-child(1)"
+      "body > div > div.colorChoose > span:nth-child(1)"
     ).hidden = false;
   }
 });
@@ -168,11 +168,11 @@ grediant.addEventListener("change", () => {
     tatNickText.style.webkitBackgroundClip = "text";
     tatNickText.style.webkitTextFillColor = "transparent";
     document.querySelector(
-      "body > div.addBg > span:nth-child(2)"
+      "body > div > div.addBg > span:nth-child(2)"
     ).hidden = true;
     grediantColorHidden.hidden = false;
     document.querySelector(
-      "body > div.colorChoose > span:nth-child(1)"
+      "body > div > div.colorChoose > span:nth-child(1)"
     ).hidden = true;
 
     update();
@@ -181,10 +181,10 @@ grediant.addEventListener("change", () => {
     tatNickText.style.webkitBackgroundClip = "";
     tatNickText.style.webkitTextFillColor = "";
     document.querySelector(
-      "body > div.addBg > span:nth-child(2)"
+      "body > div > div.addBg > span:nth-child(2)"
     ).hidden = false;
     document.querySelector(
-      "body > div.colorChoose > span:nth-child(1)"
+      "body > div > div.colorChoose > span:nth-child(1)"
     ).hidden = false;
     grediantColorHidden.hidden = true;
     update();
