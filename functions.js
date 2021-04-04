@@ -61,3 +61,20 @@ function getCookie(cname) {
 function eraseCookie(name) {
   createCookie(name, "", -1);
 }
+
+function reSet() {
+  document.querySelectorAll("input").forEach((ch) => {
+    if (ch.checked) {
+      ch.click();
+    }
+  });
+  textListen.value = "";
+  resetTatnick();
+  sizeSlider.value = 13;
+  tatNickText.style.fontSize = "";
+  tatNickText.style.color = "";
+  colorPick.value = "#0099ff";
+  shadowColorPick.value = "#8c8c8c";
+  tatNickText.style.fontFamily = "";
+  update();
+}

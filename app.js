@@ -20,6 +20,7 @@ const guyStyleCheck = document.querySelector("#guyStyleCheck");
 const abirStyleCheck = document.querySelector("#abirStyleCheck");
 const reset = document.querySelector("#reset");
 const disconnect = document.querySelector("#disconnect");
+const font = document.querySelector("#fonts");
 
 // set the text area (result) for the first time.
 result.innerHTML = tatnick.innerHTML;
@@ -29,7 +30,7 @@ result.innerHTML = tatnick.innerHTML;
 if (getCookie("username") == "") {
   username = prompt("what is your username?");
   if (username) {
-    createCookie("username", username);
+    createCookie("username", username, 30);
     loadUser();
   }
 } else {
@@ -142,19 +143,7 @@ abirStyleCheck.addEventListener("change", () => {
 
 // reset to default settings
 reset.addEventListener("click", () => {
-  document.querySelectorAll("input").forEach((ch) => {
-    if (ch.checked) {
-      ch.click();
-    }
-  });
-  textListen.value = "";
-  resetTatnick();
-  sizeSlider.value = 13;
-  tatNickText.style.fontSize = "";
-  tatNickText.style.color = "";
-  colorPick.value = "#0099ff";
-  shadowColorPick.value = "#8c8c8c";
-  update();
+  reSet();
 });
 
 if (!getCookie("username")) {
@@ -173,6 +162,8 @@ if (!getCookie("username")) {
     window.location.reload();
   };
 }
-// disconnect.addEventListener("click", () => {
-//   eraseCookie("username", "", -1);
-// });
+
+font.addEventListener("change", () => {
+  tatNickText.style.fontFamily = font.value;
+  update();
+});

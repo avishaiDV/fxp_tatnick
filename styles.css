@@ -1,6 +1,11 @@
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
 @import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+@font-face {
+  font-family: almoni-dl;
+  src: url("https://assets.kalir.co.il/fonts/almoni-dl-aaa-700.woff")
+    format("woff");
+}
 body {
   background-color: #eee;
   color: black;
@@ -172,4 +177,26 @@ body {
   box-shadow: 0px 0px 5px rgb(141, 141, 141);
   padding: 5px;
   margin: 5px;
+}
+
+.fontChoose {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.fontChoose select {
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px rgb(187, 187, 187);
+  background-color: #eee;
+  color: #ff8600;
+  font-weight: bold;
+}
+
+.fontChoose option:checked {
+  color: #eee;
+  background-color: #ff8600;
+  font-weight: bold;
 }
