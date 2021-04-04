@@ -4,7 +4,7 @@ const tatnick = document.querySelector(".tatnick");
 const textListen = document.querySelector("#textListen");
 const tatRes = document.querySelector(".tatRes");
 const tatNickText = document.querySelector(
-  "body > div.user > div.tatnick > spasn"
+  "body > div > div.user > div.tatnick > spasn"
 );
 const colorPick = document.querySelector("#pick");
 const BgcolorPick = document.querySelector("#pickBbC");
