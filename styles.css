@@ -1,11 +1,7 @@
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 @import url(https://fonts.googleapis.com/earlyaccess/opensanshebrewcondensed.css);
 @import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
-@font-face {
-  font-family: almoni-dl;
-  src: url("https://assets.kalir.co.il/fonts/almoni-dl-aaa-700.woff")
-    format("woff");
-}
+
 body {
   background-color: #eee;
   color: black;
